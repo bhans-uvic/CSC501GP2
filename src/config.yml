@@ -1,0 +1,10 @@
+data:
+  dataDir: "/data"
+  rawDir: "/raw"
+  combinedDfDir: "/combined"
+  combinedFName: "/IRAhandle_tweets.csv"
+  normDir: "/normalized"
+  normAuthor: "/author.csv"
+  normTweet: "/tweet.csv"
+  plotDir: "/plots"
+  resultDir: "/results"
