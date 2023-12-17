@@ -20,7 +20,7 @@ dfTweet = pd.read_csv(normDir + config['data']['normTweet'],low_memory=False)
 authorSentScore = {}
 
 for i,row in tqdm(dfTweet.iterrows(),total=dfTweet.shape[0]):
-    sentScore = TextBlob(row['content'],analyzer=PatternAnalyzer()).sentiment
+    sentScore = TextBlob(str(row['content']),analyzer=PatternAnalyzer()).sentiment
     if row['AuthorId'] not in authorSentScore.keys():
         authorSentScore[row['AuthorId']] = {'polarity': 0, 'subjectivity': 0}
     authorSentScore[row['AuthorId']]['polarity'] = (authorSentScore[row['AuthorId']]['polarity'] + sentScore[0])/2
