@@ -8,8 +8,29 @@ with open('config.yml', 'r') as file:
     config = yaml.safe_load(file)
 
 dataDir = dir + config['data']['dataDir']
-
 rawDir = dataDir + config['data']['rawDir']
+combinedDfDir = dataDir + config['data']['combinedDfDir']
+normDir = dataDir + config['data']['normDir']
+plotDir = dataDir + config['data']['plotDir']
+resultDir = dataDir + config['data']['resultDir']
+
+if not os.path.exists(dataDir):
+    os.makedirs(dataDir) 
+
+if not os.path.exists(rawDir):
+    os.makedirs(rawDir)
+
+if not os.path.exists(combinedDfDir):
+    os.makedirs(combinedDfDir) 
+
+if not os.path.exists(normDir):
+    os.makedirs(normDir)
+
+if not os.path.exists(plotDir):
+    os.makedirs(plotDir)
+
+if not os.path.exists(resultDir):
+    os.makedirs(resultDir)
 
 mergedDf = None
 
